@@ -138,7 +138,7 @@
 
         <!-- Image Break Section - Redesigned -->
         <section class="image-section" id="generalist-section">
-            <div class="image-frame scroll-reveal">
+            <div class="image-frame scroll-reveal image-crop-bottom">
                 <img src="images/Gemini_Generated_Image_rndt0orndt0orndt_web.jpg" alt="通才的复仇" class="featured-image parallax-image">
             </div>
             <div class="image-caption">
@@ -237,12 +237,16 @@
 
                 <div class="donut-chart-container scroll-reveal">
                     <div class="donut-chart" id="adoption-chart">
-                        <svg viewBox="0 0 200 200">
-                            <circle class="donut-ring" cx="100" cy="100" r="80"></circle>
-                            <circle class="donut-segment" cx="100" cy="100" r="80" data-percent="85"></circle>
-                            <text class="donut-text" x="100" y="95">85%</text>
-                            <text class="donut-subtext" x="100" y="115">开发者</text>
-                        </svg>
+                        <div class="donut-wrapper">
+                            <svg viewBox="0 0 200 200">
+                                <circle class="donut-ring" cx="100" cy="100" r="80"></circle>
+                                <circle class="donut-segment" cx="100" cy="100" r="80" data-percent="85"></circle>
+                            </svg>
+                            <div class="donut-center-text">
+                                <span class="donut-percent">85%</span>
+                                <span class="donut-desc">开发者</span>
+                            </div>
+                        </div>
                         <div class="donut-label">定期使用AI工具</div>
                     </div>
                     <div class="adoption-stats">

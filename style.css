@@ -509,6 +509,16 @@ section {
     transition: transform 0.5s ease;
 }
 
+/* Crop bottom of image to hide watermark */
+.image-crop-bottom {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-crop-bottom .featured-image {
+    margin-bottom: -8%;
+}
+
 .image-caption {
     text-align: center;
     max-width: 600px;
@@ -759,9 +769,16 @@ section {
     text-align: center;
 }
 
-.donut-chart svg {
+.donut-wrapper {
+    position: relative;
     width: 200px;
     height: 200px;
+    margin: 0 auto;
+}
+
+.donut-chart svg {
+    width: 100%;
+    height: 100%;
     transform: rotate(-90deg);
 }
 
@@ -780,22 +797,28 @@ section {
     transition: stroke-dasharray 1.5s var(--transition-smooth);
 }
 
-.donut-text {
-    fill: var(--accent);
+.donut-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.donut-percent {
+    display: block;
     font-size: 2.5rem;
     font-weight: 700;
     font-family: var(--font-serif);
-    text-anchor: middle;
-    transform: rotate(90deg);
-    transform-origin: center;
+    color: var(--accent);
+    line-height: 1;
 }
 
-.donut-subtext {
-    fill: var(--text-dim);
+.donut-desc {
+    display: block;
     font-size: 0.9rem;
-    text-anchor: middle;
-    transform: rotate(90deg);
-    transform-origin: center;
+    color: var(--text-dim);
+    margin-top: 0.3rem;
 }
 
 .donut-label {
@@ -1084,12 +1107,61 @@ footer {
         display: inline;
     }
 
+    /* Hero section - contained image on mobile */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        padding-top: 3rem;
+    }
+
+    .hero-bg-container {
+        position: relative;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero .bg-image {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+    }
+
+    .hero .gradient-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.3) 100%
+        );
+    }
+
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+
     .hero h1 {
         font-size: 3.5rem;
     }
 
     .hero .subtitle {
         font-size: 1rem;
+    }
+
+    .scroll-indicator {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 
     h2 {
@@ -1153,12 +1225,12 @@ footer {
         flex-shrink: 0;
     }
 
-    .donut-chart svg {
+    .donut-wrapper {
         width: 180px;
         height: 180px;
     }
 
-    .donut-text {
+    .donut-percent {
         font-size: 2.2rem;
     }
 
@@ -1230,12 +1302,12 @@ footer {
         text-align: left;
     }
 
-    .donut-chart svg {
+    .donut-wrapper {
         width: 160px;
         height: 160px;
     }
 
-    .donut-text {
+    .donut-percent {
         font-size: 1.8rem;
     }
 
