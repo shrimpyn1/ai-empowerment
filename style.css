@@ -1074,7 +1074,16 @@ footer {
 /* ===================================
    Responsive Design
    =================================== */
+/* Mobile-only line breaks - hidden on desktop */
+.mobile-break {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    .mobile-break {
+        display: inline;
+    }
+
     .hero h1 {
         font-size: 3.5rem;
     }
@@ -1149,14 +1158,35 @@ footer {
         height: 180px;
     }
 
+    .donut-text {
+        font-size: 2.2rem;
+    }
+
     .adoption-stats {
         width: 100%;
         min-width: unset;
+        padding: 0 1rem;
     }
 
     .adoption-item {
-        grid-template-columns: 1fr 70px 45px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         gap: 0.5rem;
+    }
+
+    .adoption-bar {
+        width: 100%;
+        order: 1;
+    }
+
+    .adoption-label {
+        order: 2;
+        flex: 1;
+    }
+
+    .adoption-percent {
+        order: 3;
     }
 
     .final-title {
@@ -1206,15 +1236,15 @@ footer {
     }
 
     .donut-text {
-        font-size: 2rem;
-    }
-
-    .adoption-item {
-        grid-template-columns: 1fr 50px;
+        font-size: 1.8rem;
     }
 
     .adoption-label {
-        display: none;
+        font-size: 0.8rem;
+    }
+
+    .adoption-percent {
+        font-size: 0.8rem;
     }
 }
 
