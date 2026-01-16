@@ -15,7 +15,7 @@
     --positive: #4ade80;
     --negative: #f87171;
     --terminal-green: #4af626;
-    --font-serif: 'Noto Serif SC', serif;
+    --font-serif: 'ZCOOL XiaoWei', serif;
     --font-sans: 'Noto Sans SC', sans-serif;
     --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -751,6 +751,8 @@ section {
     gap: 4rem;
     margin-top: 3rem;
     flex-wrap: wrap;
+    overflow: visible;
+    width: 100%;
 }
 
 .donut-chart {
@@ -1135,10 +1137,26 @@ footer {
     .donut-chart-container {
         flex-direction: column;
         gap: 2rem;
+        overflow: visible;
+    }
+
+    .donut-chart {
+        flex-shrink: 0;
+    }
+
+    .donut-chart svg {
+        width: 180px;
+        height: 180px;
     }
 
     .adoption-stats {
         width: 100%;
+        min-width: unset;
+    }
+
+    .adoption-item {
+        grid-template-columns: 1fr 70px 45px;
+        gap: 0.5rem;
     }
 
     .final-title {
@@ -1180,6 +1198,15 @@ footer {
 
     .bar-label {
         text-align: left;
+    }
+
+    .donut-chart svg {
+        width: 160px;
+        height: 160px;
+    }
+
+    .donut-text {
+        font-size: 2rem;
     }
 
     .adoption-item {
